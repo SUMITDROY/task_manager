@@ -1,235 +1,153 @@
-Task Manager App
+# **Task Manager App** ✅
 
-A full-stack task management application built with Next.js 14, TypeScript, MongoDB, and JWT authentication.
-It provides a simple yet powerful interface for users to sign up, log in, and manage their daily tasks with ease.
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?style=for-the-badge&logo=mongodb)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel)
 
-The project is designed to demonstrate clean architecture, modern UI practices, and scalable backend APIs, making it ideal for learning, production, or as a base for more complex SaaS platforms.
+A **full-stack task management application** built with **Next.js 14**, **TypeScript**, **MongoDB**, and **JWT authentication**.  
+The app helps users **sign up, log in, and manage their tasks** with a modern, sleek UI — all in one place.
 
-🌟 Why This Project is Awesome
+---
 
-End-to-End Full-Stack Solution
-Covers frontend, backend, and database all within a single Next.js application.
+## **🌟 Why This Project**
 
-Authentication Built-In
-Secure JWT-based sign-up and login system.
+- 🚀 **Complete Full-Stack Solution** – Frontend, backend, and database in one Next.js project.
+- 🔒 **Secure Authentication** – JWT-based login system with password hashing using `bcrypt`.
+- 🎨 **Modern UI** – Clean, responsive design powered by `shadcn/ui` + Tailwind CSS.
+- 🗂 **Organized Structure** – Scalable file structure ready for real-world apps.
+- ☁ **Vercel Deployment Ready** – Push to GitHub → Deploy to Vercel in minutes.
 
-Clean & Minimal UI
-Built with shadcn/ui and Tailwind CSS for a sleek, responsive design.
+---
 
-Scalable Codebase
-Organized structure with role-based routing and modular API routes.
+## **✨ Features**
 
-Vercel Deployment Ready
-Deployed with a single click, using environment variables for secure configuration.
+### **Authentication**
+- User sign-up and login with JWT.
+- Passwords hashed for security.
 
-✨ Features
-1. User Authentication
+### **Task Management**
+- Create, read, update, and delete tasks (CRUD).
+- Toggle completion status.
+- Progress bar for completed tasks.
 
-Sign up and log in with JWT-based authentication.
+### **UI/UX**
+- Dark, modern, mobile-first interface.
+- Smooth animations and hover states.
+- Minimal yet functional dashboard.
 
-Passwords are securely hashed using bcrypt.
+### **Deployment**
+- Works seamlessly on **Vercel** with MongoDB Atlas.
 
-Token stored safely in browser localStorage.
+---
 
-2. Task Management
+## **🗂 Project Structure**
 
-CRUD Operations:
-
-Create new tasks.
-
-Edit task details.
-
-Toggle task completion.
-
-Delete tasks.
-
-Real-time task count and completion stats.
-
-Simple progress tracking.
-
-3. Modern & Responsive UI
-
-Built with shadcn/ui for beautiful, accessible components.
-
-Mobile-first responsive layout.
-
-Clean minimal dashboard design.
-
-4. REST API with Next.js
-
-API routes managed through the Next.js App Router.
-
-Fully integrated backend without needing a separate server.
-
-Secured endpoints requiring JWT authentication.
-
-5. Deployment & Scalability
-
-Fully deployed on Vercel.
-
-Works out of the box in production with MongoDB Atlas.
-
-🗂️ Project Structure
 src/
 │
 ├── app/
-│   ├── api/                  # API routes
-│   │   ├── auth/
-│   │   │   ├── signup/route.ts   # User signup
-│   │   │   └── login/route.ts    # User login
-│   │   └── tasks/
-│   │       ├── route.ts          # Get & create tasks
-│   │       └── [id]/route.ts     # Update, toggle, delete task
-│   │
-│   ├── dashboard/
-│   │   └── page.tsx              # User's task dashboard
-│   │
-│   └── login/
-│       └── page.tsx              # Login page
+│ ├── api/
+│ │ ├── auth/
+│ │ │ ├── signup/route.ts # Register user
+│ │ │ └── login/route.ts # Login user
+│ │ │
+│ │ └── tasks/
+│ │ ├── route.ts # GET & POST tasks
+│ │ └── [id]/route.ts # PATCH & DELETE task
+│ │
+│ ├── dashboard/
+│ │ └── page.tsx # Task dashboard page
+│ │
+│ └── login/
+│ └── page.tsx # Login page
 │
 ├── lib/
-│   └── db.ts                      # MongoDB connection logic
+│ └── db.ts # MongoDB connection
 │
 └── types/
-    └── task.ts                     # TypeScript interfaces
+└── task.ts # Task TypeScript interfaces
 
+yaml
+Copy code
 
-This structure keeps both frontend and backend code in one place, making it easy to manage and scale.
+---
 
-🛠 Tech Stack
-Layer	Technology
-Frontend	Next.js 14, TypeScript, Tailwind CSS, shadcn/ui
-Backend	Next.js API Routes, TypeScript
-Database	MongoDB (Atlas) with Mongoose
-Authentication	JWT (JSON Web Token), bcrypt
-Deployment	Vercel
-🚀 Getting Started Locally
+## **🛠 Tech Stack**
 
-Follow these steps to run the project on your local machine.
+| Layer          | Technology |
+|----------------|------------|
+| **Frontend**   | Next.js 14, TypeScript, Tailwind CSS, shadcn/ui |
+| **Backend**    | Next.js API Routes (App Router) |
+| **Database**   | MongoDB Atlas + Mongoose |
+| **Auth**       | JWT, bcrypt |
+| **Deployment** | Vercel |
 
-1. Clone the Repository
-git clone https://github.com/your-username/task-manager.git
+---
+
+## **🚀 Getting Started**
+
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/<your-username>/task-manager.git
 cd task-manager
-
 2. Install Dependencies
+bash
+Copy code
 npm install
+3. Setup Environment Variables
+Create a .env.local file in the root folder and add:
 
-3. Set Up Environment Variables
+env
+Copy code
+DATABASE_URL=mongodb+srv://<your-mongodb-cluster>
+JWT_SECRET=your-secret-key
+⚠ Important:
 
-Create a .env.local file in the root of the project and add:
+Never commit this file to GitHub.
 
-DATABASE_URL=mongodb+srv://<your-cluster-url>
-JWT_SECRET=your-super-secret-key
+Use MongoDB Atlas for a free cloud database.
 
-
-Tip:
-
-Use MongoDB Atlas
- for free cloud database hosting.
-
-Keep these values private and never commit this file to GitHub.
-
-4. Run the Project Locally
+4. Run the Project
+bash
+Copy code
 npm run dev
-
-
-The app will be available at http://localhost:3000
+The app will be live at http://localhost:3000
 
 📡 API Endpoints
-Method	Endpoint	Description	Auth Required
-POST	/api/auth/signup	Register a new user	❌ No
-POST	/api/auth/login	Log in an existing user	❌ No
-GET	/api/tasks	Fetch user tasks	✅ Yes
+Method	Endpoint	Description	Auth
+POST	/api/auth/signup	Register new user	❌ No
+POST	/api/auth/login	Login user	❌ No
+GET	/api/tasks	Fetch all tasks	✅ Yes
 POST	/api/tasks	Create new task	✅ Yes
-PATCH	/api/tasks/:id/toggle	Toggle task completion	✅ Yes
+PATCH	/api/tasks/:id/toggle	Toggle completion	✅ Yes
 DELETE	/api/tasks/:id	Delete a task	✅ Yes
-📝 Example Task Data
-
-When you fetch tasks (GET /api/tasks), the API returns data like this:
-
-{
-  "tasks": [
-    {
-      "_id": "64ff4c5c1234567890abcd",
-      "title": "Finish project setup",
-      "completed": false,
-      "userId": "64ff4c5c1234567890abc1",
-      "createdAt": "2025-08-31T12:00:00Z"
-    }
-  ]
-}
-
-🌍 Deployment Instructions
-Step 1: Push to GitHub
-git add .
-git commit -m "Initial commit"
-git push origin main
-
-Step 2: Deploy on Vercel
-
-Go to Vercel
-.
-
-Create a New Project.
-
-Import your GitHub repo.
-
-Add the following environment variables in Vercel:
-
-DATABASE_URL
-
-JWT_SECRET
-
-Click Deploy.
-
-Step 3: Ignore TypeScript & ESLint Errors (Optional)
-
-If Vercel build fails due to lint/TS issues, add this to next.config.js:
-
-const nextConfig = {
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
-};
-
-module.exports = nextConfig;
 
 📊 Future Enhancements
+Role-based dashboards: Admin, Manager, Developer, Client.
 
-Role-based dashboards (Admin, Manager, Developer, Client).
+Drag-and-drop Kanban board for tasks.
 
 Real-time updates with WebSockets or Supabase Realtime.
 
-Kanban-style task view with drag-and-drop.
-
-Dark mode toggle.
-
 Email verification and password reset.
 
-🌟 Why This Project Matters
+Light/Dark mode toggle.
 
-This project demonstrates real-world full-stack development with:
+🌐 Live Demo
+Once deployed, add your Vercel link here:
 
-Authentication using JWT & hashed passwords.
-
-Secure backend APIs with Next.js App Router.
-
-Production-ready deployment with Vercel & MongoDB Atlas.
-
-Clean frontend architecture for scaling.
-
-It's a solid foundation for SaaS products, portfolio projects, or internal tools.
+Live URL: https://your-vercel-app.vercel.app
 
 👨‍💻 Author
-
 Sumit Debroy
-Built with ❤️ using Next.js, MongoDB, and shadcn/ui.
 
-🔗 Portfolio Website
+💼 LinkedIn
 
-🔗 LinkedIn
+🌐 Portfolio
 
-License
+📜 License
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute with attribution.
 
-This project is licensed under the MIT License
-.
-You are free to use, modify, and distribute this project with attribution.
+
+---
